@@ -100,10 +100,17 @@ async function transformFetchPayloadJson(fetchPayloadJson, optionsObject, filter
   return returnObj;
 }
 
+// eslint-disable-next-line no-unused-vars
 async function retrieveAndTransform(optionsObject, filterOptionsArray = null, newAttributesObject = null) {
   const response = await fetchDataJson(optionsObject);
   const transformed = await transformFetchPayloadJson(response, optionsObject, filterOptionsArray, newAttributesObject);
   return transformed;
 }
 
-export default retrieveAndTransform;
+export default fetchDataJson;
+module.exports = {
+  getURI,
+  fetchResultIsValid,
+  getDataAttributes,
+  cloneObjectAddAttribute,
+};
