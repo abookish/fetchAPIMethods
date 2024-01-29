@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import URI from 'uri-js';
 
 // defines a uri string arg of an object with atttribute value pairs
@@ -88,6 +89,7 @@ export async function getDataAttributes(fetchPayloadJson, filterOptionsArray) {
   return dataAttributes;
 }
 
+// eslint-disable-next-line max-len
 async function transformFetchPayloadJson(fetchPayloadJson, optionsObject, filterOptionsArray = null, newAttributesObject = null) {
   const returnObj = {};
   const validAlternateAttributes = await getAlternateAttributesWithValidData(optionsObject, newAttributesObject);
