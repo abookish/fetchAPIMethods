@@ -45,8 +45,8 @@ export async function cloneObjectAddAttribute(optionsObject, attributeName, attr
   clone[attributeName] = [attributeValue];
   return clone;
 }
-export async function getAlternateOptionsAttributesWithValidData(optionsObject, newAttributesObject) {
-  // runs alternate fetch on a copy of object with a changed value of the passed in attribute, or adding attribute/value
+export async function getAlternateAttributesWithValidData(optionsObject, newAttributesObject) {
+  // runs alternate fetch on a copy of object with passed in attribute, or adding attribute/value
   // if fetch payload includes results, store attribute and value pair
   const attributeValueWithResults = {
 
@@ -69,14 +69,17 @@ export async function getAlternateOptionsAttributesWithValidData(optionsObject, 
 // filterOptionsArray expects array of objs with keys: attribute, filter characteristic
 export async function getDataAttributes(fetchPayloadJson, filterOptionsArray) {
   const dataAttributes = {
+    // store fetched objects taht match the key/value of the filterOptions array
 
   };
   if (fetchPayloadJson?.length > 0 && filterOptionsArray?.length > 0) {
-    for (const filterOptionsObject of filterOptionsArray) {
+    // eslint-disable-next-line no-restricted-syntax
+    for await (const filterOptionsObject of filterOptionsArray) {
       if (Object.entries(filterOptionsObject).length > 0) {
-        for (const [attributeName, expectedValue] of Object.entries(filterOptionsObject)) {
-          const dataAttributesKey = `${attributeName}${expectedValue.toString()}`;
-          dataAttributes[dataAttributesKey] = await fetchPayloadJson?.filter((eachObj) => eachObj[attributeName] === expectedValue);
+        // eslint-disable-next-line no-restricted-syntax
+        for await (const [name, value] of Object.entries(filterOptionsObject)) {
+          const key = `${name}${value.toString()}`;
+          dataAttributes[key] = await fetchPayloadJson?.filter((obj) => obj[name] === value);
         }
       }
     }
@@ -87,7 +90,7 @@ export async function getDataAttributes(fetchPayloadJson, filterOptionsArray) {
 
 async function transformFetchPayloadJson(fetchPayloadJson, optionsObject, filterOptionsArray = null, newAttributesObject = null) {
   const returnObj = {};
-  const validAlternateAttributes = await getAlternateOptionsAttributesWithValidData(optionsObject, newAttributesObject);
+  const validAlternateAttributes = await getAlternateAttributesWithValidData(optionsObject, newAttributesObject);
   const dataAttributes = await getDataAttributes(fetchPayloadJson, filterOptionsArray);
 
   Object.assign(returnObj, dataAttributes, validAlternateAttributes);
