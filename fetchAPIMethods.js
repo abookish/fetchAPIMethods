@@ -35,7 +35,7 @@ export async function fetchResultIsValid(recordsEndPoint, optionsObject) {
   const fetchPayload = await fetchDataJson(recordsEndPoint, optionsObject);
   return fetchPayload?.length > 0;
 }
-export async function cloneObjectWithNewAttribute(optionsObject, attributeName, attributeValue) {
+export async function cloneObjectAddAttribute(optionsObject, attributeName, attributeValue) {
   if (!optionsObject) { // if nothing passed in, handle by making new obj
     const newObj = {};
     newObj[attributeName] = attributeValue;
@@ -52,11 +52,14 @@ export async function getAlternateOptionsAttributesWithValidData(optionsObject, 
 
   };
   async function setAttributesForValidResults(attributeName, attributeValue) {
-    const optionsWithNewAttribute = await cloneObjectWithNewAttribute(optionsObject, attributeValue);
-    if (await fetchResultIsValid(optionsWithNewAttribute)) { attributesWithResults[attributeName] = attributeValue; }
+    const optionsWithNewAttribute = await cloneObjectAddAttribute(optionsObject, attributeValue);
+    if (await fetchResultIsValid(optionsWithNewAttribute)) {
+      attributeValueWithResults[attributeName] = attributeValue;
+    }
   }
   if (Object.entries(newAttributesObject)?.length > 0) {
-    for (const [attributeName, expectedValue] of Object.entries(optionsObject)) {
+    // eslint-disable-next-line no-restricted-syntax
+    for await (const [attributeName, expectedValue] of Object.entries(optionsObject)) {
       await setAttributesForValidResults([attributeName, expectedValue]);
     }
   }
