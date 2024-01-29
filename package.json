@@ -1,0 +1,26 @@
+{
+  "name": "fetchapimethods",
+  "version": "1.0.0",
+  "description": "helper methods for fetching",
+  "main": "fetchAPIMethods.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/abookish/fetchAPIMethods.git"
+  },
+  "keywords": [
+    "fetch",
+    "promise",
+    "async",
+    "uri",
+    "api"
+  ],
+  "author": "Stephanie Stein, github.com/abookish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abookish/fetchAPIMethods/issues"
+  },
+  "homepage": "https://github.com/abookish/fetchAPIMethods#readme"
+}
