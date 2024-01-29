@@ -9,6 +9,7 @@ export function getURI(recordsEndPoint, optionsObject) {
   uri.addQuery('limit', limit.toString());
   // iterate through any entries to query string for attribute value
   if (Object.entries(optionsObject?.length > 0)) {
+    // eslint-disable-next-line no-restricted-syntax
     for (const [attributeName, expectedValue] of Object.entries(optionsObject)) {
       uri.addQuery(attributeName.toString(), expectedValue.toString());
     }
@@ -41,7 +42,7 @@ export async function cloneObjectWithNewAttribute(optionsObject, attributeName, 
     return newObj;
   }
   const clone = structuredClone(optionsObject);
-  clone.page = newPageValue;
+  clone[attributeName] = [attributeValue];
   return clone;
 }
 export async function getAlternateOptionsAttributesWithValidData(optionsObject, newAttributesObject) {
