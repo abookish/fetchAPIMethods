@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "helper methods for fetching",
   "main": "fetchAPIMethods.js",
-  "type": "module", 
+  "type": "module",
   "exports": {
     ".": "./fetchAPIMethods.js"
   },
@@ -28,5 +28,8 @@
   "homepage": "https://github.com/abookish/fetchAPIMethods#readme",
   "dependencies": {
     "uri-js": "^4.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
   }
 }
