@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "helper methods for fetching",
   "main": "./src/fetchAPIMethods.js",
+  "types": "./types/fetchAPIMethods.d.ts",
   "type": "module",
   "exports": {
     ".": "./src/fetchAPIMethods.js"

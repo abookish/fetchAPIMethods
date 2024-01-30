@@ -5,7 +5,8 @@
       "declaration": true,
       "outDir": "./dist", 
       "strict": true,
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "typeRoots" : ["./types"]
     },
     "include": ["types/**/*.d.ts"],
     "exclude": ["node_modules"]
