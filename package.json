@@ -2,10 +2,10 @@
   "name": "fetchapimethods",
   "version": "1.0.0",
   "description": "helper methods for fetching",
-  "main": "fetchAPIMethods.js",
+  "main": "./src/fetchAPIMethods.js",
   "type": "module",
   "exports": {
-    ".": "./fetchAPIMethods.js"
+    ".": "./src/fetchAPIMethods.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
