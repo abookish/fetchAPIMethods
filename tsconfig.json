@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "declaration": true,
+      "outDir": "./dist",  // Adjust this based on your project structure
+      "strict": true,
+      "esModuleInterop": true
+    },
+    "include": ["types/**/*.d.ts"],
+    "exclude": ["node_modules"]
+  }
+  
