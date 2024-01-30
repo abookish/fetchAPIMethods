@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "helper methods for fetching",
   "main": "./src/fetchAPIMethods.js",
-  "types": "./types/fetchAPIMethods.d.ts",
   "type": "module",
+  "moduleResolution": "nodeNext",
   "exports": {
-    ".": "./src/fetchAPIMethods.js"
+    ".": "./src/fetchAPIMethods.js",
+    "types": "./types/fetchAPIMethods.d.ts"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -28,6 +29,7 @@
   },
   "homepage": "https://github.com/abookish/fetchAPIMethods#readme",
   "dependencies": {
+    "node": "^21.6.1",
     "uri-js": "^4.4.1"
   },
   "devDependencies": {
