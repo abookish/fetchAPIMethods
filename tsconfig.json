@@ -1,13 +1,12 @@
 {
     "compilerOptions": {
       "target": "es5",
-      "module": "NodeNext",
+      "module": "CommonJS",
       "declaration": true,
       "outDir": "./dist", 
       "strict": true,
       "esModuleInterop": true,
       "typeRoots" : ["./types"],
-      "moduleResolution": "NodeNext",
       "types":["fetchAPIMethods"]
     },
     "include": ["types/**/*.d.ts"],
