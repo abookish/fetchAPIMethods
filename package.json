@@ -6,8 +6,7 @@
   "type": "module",
   "moduleResolution": "nodeNext",
   "exports": {
-    ".": "./src/fetchAPIMethods.js",
-    "types": "./types/fetchAPIMethods.d.ts"
+    ".": "./src/fetchAPIMethods.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
