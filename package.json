@@ -4,6 +4,7 @@
   "description": "helper methods for fetching",
   "main": "./src/fetchAPIMethods.js",
   "type": "module",
+  "types": "./types/fetchAPIMethods.d.ts",
   "moduleResolution": "nodeNext",
   "exports": {
     ".": "./src/fetchAPIMethods.js"
