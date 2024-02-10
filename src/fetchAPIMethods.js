@@ -106,11 +106,3 @@ async function retrieveAndTransform(optionsObject, filterOptionsArray = null, ne
   const transformed = await transformFetchPayloadJson(response, optionsObject, filterOptionsArray, newAttributesObject);
   return transformed;
 }
-
-export default fetchDataJson;
-module.exports = {
-  getURI,
-  fetchResultIsValid,
-  getDataAttributes,
-  cloneObjectAddAttribute,
-};
